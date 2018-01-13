@@ -1,12 +1,30 @@
 var React = require('react');
 var Popular = require('./popular')
+var ReactRouter = require('react-router-dom');
+var Router = ReactRouter.BrowserRouter;
+var Route = ReactRouter.Route;
+var Switch = ReactRouter.Switch;
+var Nav = require('./nav')
+var Home = require('./home')
+var Battle = require('./battle')
+
 
 class App extends React.Component {
 	render() {
 		return (
-			<div className='container'>
-				<Popular />
-			</div>
+			<Router>
+				<div className='container'>
+				<Nav />
+					<Switch>
+						<Route path='/' component={Home} exact />
+						<Route path='/battle' component={Battle} exact />
+						<Route path='/popular' component={Popular} />
+						<Route render={function(){
+							return <p>Not Found</p>
+						}}/>
+					</Switch>
+				</div>
+			</Router>
 		)
 	}
 }
