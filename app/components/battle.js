@@ -10,7 +10,7 @@ function PlayerPreview(props) {
 				className = 'avatar'
 				src= {props.image} 
 				alt={'avatar for ' + props.username}/>
-				<h2 className='username'>{props.username}</h2>
+				<h2 className='username'>@{props.username}</h2>
 			</div>
 			<button className='reset' onClick={props.onReset.bind(null, props.id)}>
 				Reset

@@ -3,7 +3,6 @@ var PropTypes = require('prop-types')
 var api = require('../utils/api')
 
 function RepoGrid (props) {
-	console.log(props)
 	return(		
 		<ul className='popular-list'>
 			{props.repos.map((repo, index) => {
